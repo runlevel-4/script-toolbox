@@ -1,2 +1,2 @@
-# void-linux
-Various scripts for setting up your void linux environment
+# obsidian installer
+This script will download the Obsidian release and install it on your Linux system.
