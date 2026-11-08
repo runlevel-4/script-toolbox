@@ -19,10 +19,10 @@ sudo tar -xzvf latest.tar.gz
 # Configuring database environment
 echo
 echo "If you don't have a root password for your MySQL instance, just press Enter:"
-sudo mysql -u root -p < $HOME/wordpress-automation/wp-linux/wp_mysql_setup.sql
+sudo mysql -u root -p < $HOME//script-toolbox/web-server-automation/wordpress/wp_mysql_setup.sql
 
 #Setup Wordpress environment
-sudo cp -r $HOME/wordpress-automation/wp-linux/wp-config.php /var/www/html/wordpress/
+sudo cp -r $HOME/script-toolbox/web-server-automation/wordpress/wp-config.php /var/www/html/wordpress/
 sudo rm -rf /wordpress/wp-config-sample.php
 sudo rm -rf latest.tar.gz
 sudo chown -R www-data: /var/www/html/wordpress
