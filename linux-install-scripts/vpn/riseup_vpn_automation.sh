@@ -1,3 +1,10 @@
+# check if openvpn is installed
+if command -v openvpn >/dev/null 2>&1; then
+	echo "OpenVPN is installed"
+else
+	echo "OpenVPN is NOT installed.  Install it using your package manager."
+	exit 1
+fi
 # get RiseupVPN keys and certs
 curl -Os https://api.black.riseup.net/3/cert
 curl -Os https://black.riseup.net/ca.crt
@@ -24,11 +31,5 @@ ca=$(echo "<ca>" >> riseup.ovpn; cat ca.crt >> riseup.ovpn; echo "</ca>" >> rise
 # add the private key and cers to the OpenVPN config file
 $pk; $cert; $ca
 
-# check if openvpn is installed
-if command -v openvpn >/dev/null 2>&1; then
-	echo "OpenVPN is installed"
-	sudo openvpn --config riseup.ovpn
-else
-	echo "OpenVPN is NOT installed.  Install it using your package manager."
-	exit 1
-fi
+# launch openvpn using the newly built config file
+sudo openvpn --config riseup.ovpn
