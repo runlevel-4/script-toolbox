@@ -30,4 +30,5 @@ if command -v openvpn >/dev/null 2>&1; then
 	sudo openvpn --config riseup.ovpn
 else
 	echo "OpenVPN is NOT installed.  Install it using your package manager."
+	exit 1
 fi
