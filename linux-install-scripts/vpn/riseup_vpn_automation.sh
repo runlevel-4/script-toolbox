@@ -29,6 +29,7 @@ cert=$(echo "<cert>" >> riseup.ovpn; awk '/-----BEGIN CERTIFICATE-----/,/-----EN
 ca=$(echo "<ca>" >> riseup.ovpn; cat ca.crt >> riseup.ovpn; echo "</ca>" >> riseup.ovpn)
 
 # add the private key and cers to the OpenVPN config file
+echo "This has to run as sudo\n"
 $pk; $cert; $ca
 
 # launch openvpn using the newly built config file
