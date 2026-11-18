@@ -1,10 +1,19 @@
 # check if openvpn is installed
 if command -v openvpn >/dev/null 2>&1; then
-	echo "OpenVPN is installed"
+	echo "OpenVPN is installed...continuing\n"
 else
-	echo "OpenVPN is NOT installed.  Install it using your package manager."
+	echo "OpenVPN is NOT installed.  Install it using your package manager.\n"
 	exit 1
 fi
+
+# check if jq is installed
+if command -v jq >/dev/null 2>&1; then
+	echo "jq is installed...continuing\n"
+else
+	echo "jq is NOT installed.  Install it using your package manager.\n"
+	exit 1
+fi
+
 # get RiseupVPN keys and certs
 curl -Os https://api.black.riseup.net/3/cert
 curl -Os https://black.riseup.net/ca.crt
@@ -13,7 +22,7 @@ curl -Os https://black.riseup.net/ca.crt
 curl -Os https://api.black.riseup.net/3/config/eip-service.json
 
 # initialize the riseup.ovpn config file
-printf 'client\ndev tun\nproto tcp\nnobind\nremote-random\npersist-key\npersist-tun\npull-filter ignore "ping"\npull-filter ignore "ping-restart"\nkeepalive 10 20\nserver-poll-timeout 10\nconnect-retry 1 2\nconnect-retry-max 1\ncipher AES-256-GCM\ndata-ciphers AES-256-GCM\nremote-cert-tls server\nverb 3\nremote-random\n' > riseup.ovpn
+printf 'client\ndev tun\nproto tcp\nnobind\npersist-key\npersist-tun\npull-filter ignore "ping"\npull-filter ignore "ping-restart"\nkeepalive 10 20\nserver-poll-timeout 10\nconnect-retry 1 2\nconnect-retry-max 1\ncipher AES-256-GCM\ndata-ciphers AES-256-GCM\nremote-cert-tls server\nverb 3\nremote-random\n' > riseup.ovpn
 
 # parse JSON with jq to get a list of the gateway IPs
 parse_gateways=$(jq -r '.gateways[].ip_address' eip-service.json)
@@ -33,4 +42,5 @@ echo "This has to run as sudo\n"
 $pk; $cert; $ca
 
 # launch openvpn using the newly built config file
+echo "you have to run this as sudo\n"
 sudo openvpn --config riseup.ovpn
