@@ -1,4 +1,11 @@
-# What this does
+# VPN Config Script
 
-1. This script will check for `OpenVPN` and if it is installed, pull from the `Riseup VPN` API to get a private key, cert, and ca cert.
-2. It will then build a OpenVPN config file (riseup.ovpn) and launch OpenVPN using the config file with `sudo openvpn --config riseup.ovpn`
+## Description
+This script will connect to the Riseup VPN service assuming `openvpn` and `jq` are installed (it will check first)
+
+### Prerequisites
+`openvpn`
+`jq`
+
+### Instructions
+After installing the prerequisites, run the `riseup_vpn_automation.sh` script
