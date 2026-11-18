@@ -1,16 +1,16 @@
 # check if openvpn is installed
 if command -v openvpn >/dev/null 2>&1; then
-	echo "OpenVPN is installed...continuing\n"
+	echo -e "OpenVPN is installed...continuing\n"
 else
-	echo "OpenVPN is NOT installed.  Install it using your package manager.\n"
+	echo -e "OpenVPN is NOT installed.  Install it using your package manager.\n"
 	exit 1
 fi
 
 # check if jq is installed
 if command -v jq >/dev/null 2>&1; then
-	echo "jq is installed...continuing\n"
+	echo -e "jq is installed...continuing\n"
 else
-	echo "jq is NOT installed.  Install it using your package manager.\n"
+	echo -e "jq is NOT installed.  Install it using your package manager.\n"
 	exit 1
 fi
 
@@ -38,9 +38,9 @@ cert=$(echo "<cert>" >> riseup.ovpn; awk '/-----BEGIN CERTIFICATE-----/,/-----EN
 ca=$(echo "<ca>" >> riseup.ovpn; cat ca.crt >> riseup.ovpn; echo "</ca>" >> riseup.ovpn)
 
 # add the private key and cers to the OpenVPN config file
-echo "This has to run as sudo\n"
+echo -e "This has to run as sudo\n"
 $pk; $cert; $ca
 
 # launch openvpn using the newly built config file
-echo "you have to run this as sudo\n"
+echo -e "you have to run this as sudo\n"
 sudo openvpn --config riseup.ovpn
