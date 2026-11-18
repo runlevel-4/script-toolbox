@@ -1,6 +1,6 @@
 # VPN Config Script
 
-## Description
+### Description
 This script will connect to the Riseup VPN service assuming `openvpn` and `jq` are installed (it will check first)
 
 ### Prerequisites
