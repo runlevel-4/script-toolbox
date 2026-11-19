@@ -44,3 +44,4 @@ Describe any required environment variables, credentials, or config files here. 
 ```bash
 sudo pkill openvpn
 ```
+or CTRL + C
