@@ -40,8 +40,4 @@ Describe any required environment variables, credentials, or config files here. 
 - Ensure the script is being run by a user with sufficient privileges.
 
 ## Disconnect
-
-```bash
-sudo pkill openvpn
-```
-or CTRL + C
+`sudo pkill openvpn` or `CTRL + C`
