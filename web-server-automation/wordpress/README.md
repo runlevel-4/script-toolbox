@@ -18,7 +18,7 @@ sudo apt update
 sudo apt install -y git
 git clone https://github.com/runlevel-4/script-toolbox.git
 cd script-toolbox
-bash web-server-automation/wordpress/install_wp.sh
+sh web-server-automation/wordpress/install_wp.sh
 ```
 
 **NOTE:** It is recommended to login to MySQL/MariaDB and change the root login as well as the password for the _wordpress_ user.  Then update the password value in your _wp-config.php_ file to match.  Do this only if you plan on exposing your server to the internet...otherwise, the default is fine for development.
