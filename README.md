@@ -1,23 +1,24 @@
-## README.md
-
-```markdown
-# script-toolbox
+### Script Toolbox
 
 A collection of scripts for software installation and workflow automation.
 
 ## Available scripts
 
-Documentation for individual scripts will be added here as the toolbox grows.
+### Linux
+- Docker Install
+- Obsidian Install
+- Powershell Install
+- VPN setup
 
-## Usage
+### Powershell
+- Server Health
+- XML Parser
 
-Review a script before running it, then execute it from a supported shell:
+### Web Server Automation
 
-```bash
-bash path/to/script.sh
-```
+- WordPress
 
-If a script requires elevated permissions or additional dependencies, those requirements should be documented alongside the script.
+**NOTE**: If a script requires elevated permissions or additional dependencies, those requirements will appear in the README for each script.
 
 ## Contributing
 
