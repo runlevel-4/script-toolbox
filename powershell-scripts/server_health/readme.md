@@ -28,18 +28,9 @@ PowerShell script that periodically checks Windows services and IIS application 
 
 ## Usage
 
-```powershell
-.\Watchdog.psm1 -Servers "SERVER01", "SERVER02" `
-    -SmtpServer "smtp.example.com" `
-    -From "monitor@example.com" `
-    -To "admin@example.com"
-```
+`.\Watchdog.ps1`
 
 Replace the placeholders and parameters with the names supported by the script.
-
-## Configuration
-
-Document each supported setting here:
 
 | Setting | Description | Example |
 |---|---|---|
