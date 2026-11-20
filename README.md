@@ -1,4 +1,4 @@
-### Script Toolbox
+# Script Toolbox
 
 A collection of scripts for software installation and workflow automation.
 
