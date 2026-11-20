@@ -6,13 +6,13 @@ This script will setup all of the prerequsite LAMP stack components and create a
 
 At the Linux command line do this from your `/home directory`:
 
-1. If _git_ is not installed, just run `sudo apt install git`
+1. If _git_ is not installed, just run `sudo apt install git` (Ubuntu/Debian based)
 2. `git clone https://github.com/runlevel-4/script-toolbox`
 3. `sh script-toolbox/web-server-automation/wordpress/install_wp.sh`
 
 ======================================================================
 
-**NOTE:** I recommend logging into MySQL/MariaDB and changing the root login as well as the password for the _wordpress_ user.  Then update the password value in your _wp-config.php_ file to match.  Do this only if you plan on exposing your server to the internet...otherwise, the default is fine for development.
+**NOTE:** It is recommended to login to MySQL/MariaDB and change the root login as well as the password for the _wordpress_ user.  Then update the password value in your _wp-config.php_ file to match.  Do this only if you plan on exposing your server to the internet...otherwise, the default is fine for development.
 
 `sudo mysql -u root -p` (if you don't have a mysql password, just hit _Enter_)
 
