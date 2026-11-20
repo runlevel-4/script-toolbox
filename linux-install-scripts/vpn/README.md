@@ -5,25 +5,35 @@ A shell script that connects to the [Riseup VPN](https://riseup.net/en/vpn) usin
 ## Prerequisites
 
 - Linux
+- `sudo` privileges
 - `openvpn`
 - `jq`
-- A Riseup account
-- Root or `sudo` privileges
 
-Install the required tools on Debian/Ubuntu:
+Install the required tools:
 
+### Ubuntu/Debian
 ```bash
 sudo apt update
 sudo apt install openvpn jq
 ```
 
-## Usage
+### Arch
+```bash
+sudo pacman -Syu
+sudo pacman -S openvpn jq
+```
 
-From the repository root:
+### Fedora/RHEL
+```bash
+sudo dnf update
+sudo dnf install openvpn jq
+```
+
+## Usage
 
 ```bash
 chmod +x riseup_vpn_automation.sh
-sudo ./riseup_vpn_automation.sh
+sh riseup_vpn_automation.sh
 ```
 
 The script checks for OpenVPN and jq before attempting to configure and start the VPN connection.
