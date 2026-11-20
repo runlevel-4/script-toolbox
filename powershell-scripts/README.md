@@ -1,23 +1,64 @@
-# Powershell
+# PowerShell Scripts
 
-Here is a header you can use for your scripts:
+A collection of reusable PowerShell scripts for Windows server and desktop administration.
 
-```
+## Script Header
+
+Use the following header for new scripts:
+
+```powershell
 #-------------------------------------------------------------------------------------------#
-# Author: dev name
-# Description: Tell us what your awesome script does
+# Author:       Dev Name
+# Description:  Describe what the script does
+# Version:      1.0
+#-------------------------------------------------------------------------------------------#
 
-# Version | Modify Date       | Modify By            | Modification
-# 1.0        | 01/01/2026      | Dev Name           | Original Build
-#--------------------------------------------------------------------------------------------#
+# Changelog
+# Version | Modified Date | Modified By | Change
+# --------|---------------|-------------|----------------
+# 1.0     | 2026-01-01    | Dev Name    | Original build
+#-------------------------------------------------------------------------------------------#
 ```
 
-**xml parser**: this script will loop through multiple xml files and output the data from each file into a row in a csv
+## Available Scripts
 
-**server health monitor (watchdog)**: this script will loop through a list of servers and check services and app pools (for web servers if applicable)
+### XML Parser
 
-**server reboots**: this script will loop through a list of servers and reboot them one at a time (waits for previous one to come back up before moving on)
+Loops through multiple XML files and exports their data into a CSV file.
 
-**desktop support**: this is a "quick ticket" interface for users to quickly choose a computer issue from a dropdown and emails your tech support
+### Server Health Monitor
 
-...more to come
+Checks the health of one or more servers, including:
+
+- Windows services
+- IIS application pools, when applicable
+- Optional event or resource checks
+
+### Server Reboots
+
+Reboots servers sequentially:
+
+1. Reboots one server.
+2. Waits for the server to become available again.
+3. Proceeds to the next server.
+
+### Desktop Support
+
+Provides a simple graphical interface that allows users to select a common computer issue and submit a support ticket through email.
+
+## Usage
+
+Replace the placeholder below with the script's actual usage instructions:
+
+```powershell
+.\ScriptName.ps1
+```
+
+Include a description of required parameters, configuration files, and administrative privileges when each script is finalized.
+
+## Requirements
+
+- Windows PowerShell 5.1 or PowerShell 7+
+- Required modules, Windows features, and permissions
+- Network access to target servers or services, where applicable
+````
