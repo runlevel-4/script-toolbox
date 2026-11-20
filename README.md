@@ -33,4 +33,3 @@ Contributions are welcome:
 ## License
 
 A license should be added before the scripts are shared or reused. Until then, all rights are reserved by the repository owner.
-```
