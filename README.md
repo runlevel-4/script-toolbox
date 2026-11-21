@@ -8,7 +8,6 @@ A collection of scripts for software installation and workflow automation.
 - Docker Install
 - Obsidian Install
 - Powershell Install
-- VPN setup
 
 ### Powershell
 - Server Health
